@@ -1,4 +1,4 @@
-package org.example;
+package org.connector;
 
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.source.SourceRecord;
@@ -31,12 +31,11 @@ public class PingSourceTask extends SourceTask {
         Map<String, Long> sourceOffset = Collections.singletonMap("position", streamOffset);
         records.add(new SourceRecord(sourcePartition, sourceOffset, topic, Schema.STRING_SCHEMA, "ping"));
         Thread.sleep(10000);
-        System.out.println("Hello World!");
         return records;
     }
 
     @Override
     public void stop() {
-        System.out.println("Bye!");
+        System.out.println("Task has been stopped");
     }
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.connector;
 
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.connect.connector.Task;
@@ -40,7 +40,7 @@ public class PingSourceConnector extends SourceConnector {
 
     @Override
     public void stop() {
-        System.out.println("Bye!!!!!");
+        System.out.println("Connector has been stopped");
     }
 
     @Override
